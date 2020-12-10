@@ -1,0 +1,30 @@
+import std.fs
+
+var input = fs
+    .read_file("data.txt")
+    .split("\r\n")
+    .filter(x => x != "")
+    .map(Number.from)
+
+var results = []
+var len = input.len()
+var i = 0
+
+while i < len / 2 {
+    var j = len / 2
+
+    while j < len {
+        if j != i {
+            var sum = input[i] + input[j]
+            if sum == 2020 {
+                results.push(input[i] * input[j])
+            }
+        }
+
+        j++
+    }
+
+    i++
+}
+
+print(results.fold(1, (acc, x) => acc * x))
