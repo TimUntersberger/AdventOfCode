@@ -1,7 +1,7 @@
 import std.fs
 
 var input = fs
-    .read_file("data.txt")
+    .read_file("1.txt")
     .split("\r\n")
     .filter(x => x != "")
     .map(Number.from)
